@@ -25,7 +25,7 @@ class App:
                     return
 
                 note = muth.str_to_note(input_str)
-                print(f'{note.octave}, {note.value}, {note.accidental}')
+                print(f'{note.octave}, {note.value}, {note.accidental}: {note.get_frequency()}Hz')
             except ValueError as err:
                 print(f'Error: {err}')
                 return

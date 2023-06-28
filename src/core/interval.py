@@ -23,8 +23,10 @@ class Interval:
     def is_perfect(self):
         return (self._delta % 12) in (1, 4, 5, 8)
 
-    def get_from_notes(notes : Tuple[MusicNote, MusicNote]):
-        pass
-
     def __str__(self) -> str:
         return self._interpreter.interval_to_str(self)
+    
+    def get_from_notes(self, notes : Tuple[MusicNote, MusicNote]):
+        self._delta = notes[1].value - notes[0].value
+        self.type = notes[1].accidental - notes[0].accidental 
+        pass

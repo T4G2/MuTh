@@ -10,14 +10,14 @@ from .interval import Interval
 
 
 BASE_NOTES = {
-    ( 0, 0): "A",
-    ( 2,-1): "B",
-    ( 2, 0): "H",
-    ( 3, 0): "C",
-    ( 5, 0): "D",
-    ( 7, 0): "E",
-    ( 8, 0): "F",
-    (10, 0): "G"
+    ( 0, 0): "C",
+    ( 1, 0): "D",
+    ( 2, 0): "E",
+    ( 3, 0): "F",
+    ( 4, 0): "G",
+    ( 5, 0): "A",
+    ( 6,-1): "B",
+    ( 6, 0): "H"
 }
 
 
@@ -25,20 +25,15 @@ BASE_NOTES = {
 
 #first one is pitch ,second one is accidental
 BASE_NOTES_REVERSE = {
-    "A": ( 0, 0),
-    "B": ( 2,-1),
-    "H": ( 2, 0),
-    "C": ( 3, 0),
-    "D": ( 5, 0),
-    "E": ( 7, 0),
-    "F": ( 8, 0),
-    "G": (10, 0)
+    "C": ( 0, 0),
+    "D": ( 1, 0),
+    "E": ( 2, 0),
+    "F": ( 3, 0),
+    "G": ( 4, 0),
+    "A": ( 5, 0),
+    "B": ( 6,-1),
+    "H": ( 6, 0),
 }
-
-NAMING_EXCEPTIONS = {
-    (2, -1) : "B"
-}
-
 
 def process_note(string: str, note : MusicNote) -> str:
     if len(string) == 0:
