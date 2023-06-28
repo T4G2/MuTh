@@ -2,13 +2,18 @@ import repackage
 repackage.up(1)
 
 from core.german_interpreter import DInterpreter
+from core.localization import Localization
 
 class App:
     def __init__(self) -> None:
         pass
 
-    
     def run(self):
+        loc = Localization()
+        if not loc.load("../res/loc/sk.loc"):
+            print("Could Not Load Localization")
+            return
+        
         muth = DInterpreter()
 
         input_str = ""

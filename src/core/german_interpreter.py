@@ -1,7 +1,13 @@
-from .music_note import MusicNote
-from .base_interpreter import BaseInterpeter
+from typing import Tuple
+
+from .base_interpreter import BaseInterpreter
 from .funcs import parse_accidentals
 from .consts import *
+
+from .music_note import MusicNote
+from .interval import Interval
+
+
 
 BASE_NOTES = {
     ( 0, 0): "A",
@@ -70,7 +76,7 @@ def process_octave(string: str, note: MusicNote) -> str:
     return string[1:]
 
 
-class DInterpreter (BaseInterpeter):
+class DInterpreter (BaseInterpreter):
     def __init__(self) -> None:
         pass
 
@@ -83,7 +89,7 @@ class DInterpreter (BaseInterpeter):
         '''
     def str_to_note(self, string: str) -> MusicNote:
 
-        note = MusicNote()
+        note = MusicNote(self)
         string = process_note(string, note)
         string = process_octave(string, note)
         parse_accidentals(string, note)
@@ -94,7 +100,12 @@ class DInterpreter (BaseInterpeter):
         return note
         
 
-        
-
     def note_to_str(self, note: MusicNote) -> str:
         raise NotImplementedError()
+    
+    
+    def interval_to_str(self, interval: Interval) -> str:
+        return "Interval Naming Non Implemented"
+    
+    def str_to_interval(self, string:str) -> Interval:
+         pass

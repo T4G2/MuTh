@@ -1,6 +1,6 @@
 
 # same as A1 in german
-A4_BASE_FREQUENCY = 440
+C0_BASE_FREQUENCY = 16.35
 
 A4_BASE_ID = 0
 

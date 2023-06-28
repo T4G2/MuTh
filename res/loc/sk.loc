@@ -1,0 +1,21 @@
+interval.perfect čistá
+interval.augh zväčšená
+interval.dim zmenšená
+interval.major veľká
+interval.minor malá
+
+interval.abbr.perfect c
+interval.abbr.augh zv
+interval.abbr.dim zm
+interval.abbr.major v
+interval.abr.minor m
+
+interval.0 unison
+interval.1 prima
+interval.2 sekunda
+interval.3 tercia
+interval.4 kvarta
+interval.5 kvinta
+interval.6 sexta
+interval.7 septima
+interval.8 oktáva

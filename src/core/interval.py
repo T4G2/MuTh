@@ -1,4 +1,30 @@
+from typing import Tuple
 
+from .music_note import MusicNote
 
 class Interval:
-    pass
+    
+
+    def __init__(self, interpreter: "BaseInterpreter") -> None:
+        self._interpreter = interpreter
+        self._delta = 0 # name is always 1 above so Prime - _delta=0
+        
+        # IN CASE OF CONSONALT(1, 4,5,8) -1 diminished 0 perfect 1 augmented
+        # IN CASE OF NON CONSONANT ??
+        self.type = 0
+        pass
+
+    def get_type(self):
+        return self.delta + 1
+    
+    def get_tuple(self):
+        return self.delta + 1, self.type
+
+    def is_perfect(self):
+        return (self._delta % 12) in (1, 4, 5, 8)
+
+    def get_from_notes(notes : Tuple[MusicNote, MusicNote]):
+        pass
+
+    def __str__(self) -> str:
+        return self._interpreter.interval_to_str(self)
