@@ -1,0 +1,4 @@
+
+
+class Interval:
+    pass

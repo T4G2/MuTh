@@ -1,4 +1,4 @@
-from music_note import MusicNote
+from .music_note import MusicNote
 
 
 class BaseInterpeter:
@@ -8,5 +8,5 @@ class BaseInterpeter:
     def str_to_note(self, string: str) -> MusicNote:
         raise NotImplementedError()
 
-    def string_to_note(self, note: MusicNote) -> str:
+    def note_to_str(self, note: MusicNote) -> str:
         raise NotImplementedError()
