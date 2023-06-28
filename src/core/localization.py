@@ -28,6 +28,6 @@ class Localization:
     def get(self, str_name: str) -> str:
         item = self.dict.get(str_name)
 
-        return "[null]" if item is None else item
+        return f'[null: {str_name}]' if item is None else item
                     
         

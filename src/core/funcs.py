@@ -4,6 +4,7 @@ ACCIDENTALS = {
     '#' : +1,
     'b' : -1,
     'n' : 0,
+    's' : +1, # As Sharp
 }
 
 def parse_accidentals(acc: str, note: MusicNote) -> int:
@@ -15,13 +16,13 @@ def parse_accidentals(acc: str, note: MusicNote) -> int:
         return
 
     if (acc_count == 2):
-        if acc[0] != acc[1] or acc[0] not in ('#, b'):
+        if acc[0] != acc[1] or acc[0] not in ('#', 'b', 's'):
             raise ValueError(f'Accidental {acc} is not correct!')
         note.accidental = ACCIDENTALS[acc[0]] * 2
         return 
     
 
-    if (acc[0] not in ('#', 'b', 'n')):
+    if (acc[0] not in ACCIDENTALS):
         raise ValueError(f'Accidental {acc} is not correct!')
 
     note.accidental =  ACCIDENTALS[acc[0]]

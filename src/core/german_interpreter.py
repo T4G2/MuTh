@@ -35,6 +35,8 @@ BASE_NOTES_REVERSE = {
     "H": ( 6, 0),
 }
 
+
+
 def process_note(string: str, note : MusicNote) -> str:
     if len(string) == 0:
          raise ValueError(f'Incorrect Note Input: {string}')
@@ -72,7 +74,8 @@ def process_octave(string: str, note: MusicNote) -> str:
 
 
 class DInterpreter (BaseInterpreter):
-    def __init__(self) -> None:
+    def __init__(self, localization) -> None:
+        BaseInterpreter.__init__(self, localization)
         pass
 
         '''
@@ -100,6 +103,12 @@ class DInterpreter (BaseInterpreter):
     
     
     def interval_to_str(self, interval: Interval) -> str:
+
+        loc_str = "interval.abbr." + ('c' if  interval.is_consonant() else 'nc') + f".{interval.type}" 
+             # get from localization `interval.abbr.-2` for example
+             
+        return f'{interval._delta+1}{self.loc(loc_str)}'
+        
         return "Interval Naming Non Implemented"
     
     def str_to_interval(self, string:str) -> Interval:

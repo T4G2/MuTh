@@ -4,9 +4,8 @@ C1_BASE_FREQUENCY = 16.35
 
 A4_BASE_ID = 0
 
-NOTE_A_VALUE = 9
 
-
+TONES_COUNT = 7
 
 NOTES_SEMITONES = [
     0,
@@ -16,4 +15,11 @@ NOTES_SEMITONES = [
     7,
     9,
     11
+]
+
+CONSONANT_INTERVALS = [
+    0, 
+    3, 
+    4
+
 ]

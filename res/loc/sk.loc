@@ -4,11 +4,17 @@ interval.dim zmenšená
 interval.major veľká
 interval.minor malá
 
-interval.abbr.perfect c
-interval.abbr.augh zv
-interval.abbr.dim zm
-interval.abbr.major v
-interval.abr.minor m
+interval.abbr.c.-2 dzm
+interval.abbr.c.-1 zm
+interval.abbr.c.0 p
+interval.abbr.c.1 zv
+interval.abbr.c.2 dzv
+
+interval.abbr.nc.-2 zm
+interval.abbr.nc.-1 m
+interval.abbr.nc.0 v
+interval.abbr.nc.1 zv
+interval.abbr.nc.2 dzv
 
 interval.0 unison
 interval.1 prima

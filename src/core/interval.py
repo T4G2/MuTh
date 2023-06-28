@@ -1,5 +1,7 @@
 from typing import Tuple
 
+from .consts import *
+
 from .music_note import MusicNote
 
 class Interval:
@@ -20,13 +22,13 @@ class Interval:
     def get_tuple(self):
         return self.delta + 1, self.type
 
-    def is_perfect(self):
-        return (self._delta % 12) in (1, 4, 5, 8)
+    def is_consonant(self):
+        return self._delta % TONES_COUNT in CONSONANT_INTERVALS
 
     def __str__(self) -> str:
         return self._interpreter.interval_to_str(self)
     
     def get_from_notes(self, notes : Tuple[MusicNote, MusicNote]):
-        self._delta = notes[1].value - notes[0].value
+        self._delta = notes[1].value - notes[0].value + (notes[1].octave - notes[0].octave) * TONES_COUNT
         self.type = notes[1].accidental - notes[0].accidental 
         pass

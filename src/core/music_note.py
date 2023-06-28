@@ -1,7 +1,7 @@
 from .consts import *
 
 class MusicNote:
-    def __init__(self, interpreter: "BaseInterpreter", value : int = NOTE_A_VALUE, accidental : int = 0, octave : int= 4) -> None:
+    def __init__(self, interpreter: "BaseInterpreter", value : int = 0, accidental : int = 0, octave : int= 4) -> None:
         self._interpreter = interpreter
         # C id has 0 value ( 0 - 6)
         self.value = value
