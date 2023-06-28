@@ -1,0 +1,56 @@
+@startuml Class
+
+
+class Note {
+    note: int
+    accidental: int 
+
+
+}
+
+note left of Note {
+    **Accidental**
+    -2 - double flat
+    -1 flat
+    0 natural
+    1 sharp
+    2 double sharp
+}
+
+class Interval {
+    _delta_note: int
+    type: int
+
+}
+
+note left of Interval {
+    **Type:**
+    Differs for both **Consonant** and **Non Consonant**
+    -2  
+
+    
+}
+
+class Localization {
+
+}
+
+
+class BaseInterpreter {
+    __init__(self, loc : Localization)
+    str_to_note( string: str) -> Note
+    note_to_str( note: Note) -> Str
+}
+
+class GermanInterpreter {
+
+}
+
+class USAInterpreter {
+
+}
+
+USAInterpreter ---|> BaseInterpreter
+GermanInterpreter ---|> BaseInterpreter 
+@enduml
+
